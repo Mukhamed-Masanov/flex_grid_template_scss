@@ -1,0 +1,126 @@
+@media screen and (max-width:568px) {
+    .container {
+        grid-template-rows: repeat(8, auto);
+        grid-template-areas: "header""sidebar""main""help""sidebar_related""gallery""footer";
+        grid-template-columns: 100%;
+    
+.logo{
+    i{      
+          @include font(1.6em,$main_h1 ,200 );
+    }
+}
+    header {
+        grid-area: header;
+        nav{
+            ul{
+                li{
+                    a{
+                        font-size: .9em;
+                    }
+                }
+            }
+        }
+        .login{
+            width: 60px;
+height: 23px;
+font-size: 11px;
+margin-right: 0;
+        }
+
+    }
+    .hero {
+        display: none;
+    }
+    .sidebar {
+        grid-area: sidebar;
+        height:100px ;
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        align-items: center;
+        justify-content: center;
+       
+        ul {
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+             li {
+                display: inline;
+                a{
+                    font-size: .7em;
+                }
+            }
+        }
+        h6{
+            text-align: center;
+            justify-self: center;
+            
+
+        }
+    }
+    main {
+        grid-area: main;
+        p{
+            font-size: .8em;
+        }
+    }
+
+    .help {
+        grid-area: help;
+        height: auto;
+        .help_item{
+            h3{
+                font-size: .8em;
+            }
+        p{
+font-size: .75em ;
+        }
+        button{
+            font-size: 10.3px;
+            width: 40px;
+        }
+    }
+    }
+
+    .gallery {
+        grid-area: gallery;
+      
+        
+    }
+
+    .sidebar_related {
+        grid-area: sidebar_related;
+        display: flex;
+        justify-content: space-around;
+        align-content: center;
+      
+        ul{
+            display: flex;
+            justify-content: space-around;
+           width: 200px;
+            li{
+                display: inline-block;
+           a{
+            @include font(.95em,$sidebar-related_a ,500 );
+           }
+            }
+        }
+        h3{
+            font-size: 17px;
+            text-align: center;
+          
+        }
+    }
+    footer {
+        grid-area: footer;
+        h3{
+            font-size: 15px;
+        }
+        p{
+            font-size: .75em;
+        }
+    }
+
+    }
+}
+

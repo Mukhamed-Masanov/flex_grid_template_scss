@@ -1,0 +1,226 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+@mixin font ($p1, $p2, $p3){
+    font-size: $p1;
+    color: $p2;
+    font-weight: $p3;
+}
+    @mixin color($c1, $c2) {
+        background-color: $c1;
+        color: $c2;
+    }
+
+
+body{
+    @include color($light_grey,$text_color );
+    font-family: 'Montserrat', sans-serif;
+   }
+    a{
+        text-decoration: none;
+        color: inherit;
+    }
+    .container{
+        display: grid;
+        grid-template-columns: 40% 20% 20% 20%;
+        grid-template-rows: repeat(6, auto);
+        grid-column-gap: 5px;
+        grid-row-gap: 10px;
+        max-width:  757px;
+        margin: 0 auto;
+        background-color: $white;
+        padding: 0 30px; 
+.logo{
+    i{
+        @include font(1.4em,$main_h1 ,200 );
+    }
+}
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    grid-column: 1/6;
+    grid-row: 1/2;
+    border-bottom: 2px solid $header_border;
+    height: 50px;
+    color: $header_background;
+    padding: 20px 0;
+
+nav{
+    ul{
+        display: flex;
+    list-style-type: none;
+        li{
+            margin: .5em;
+
+            a{
+                font-size: .7em;
+            }
+        }
+    }
+   
+}
+.login , .login:active{
+    @include color($button_color,$white);
+    padding: 3px 5px;
+    border-radius: 1.3em;
+    border-style: none;
+    outline: none;
+width: 53px;
+height: 19px;
+font-size: 9px;
+margin-right: 26px;
+&:active{
+    @include color($button_color,$white);
+}
+&:focus{
+    background-color: $button_focus;
+}
+} 
+}
+.hero {
+    grid-column: 1/2;
+    grid-row: 2/3;
+    img{
+        width: 100%;
+    }
+
+}
+.sidebar {
+    grid-column: 1/2;
+    grid-row:  3/4;
+     background-color: $sidebar_background; 
+    padding: .3em;
+    border-top: 3px solid $sidebar_border;
+    height: 130px;
+    h6{
+        margin: 1em 0;
+        padding-left: 10px;
+    }
+    ul{
+        list-style-type: none;
+    padding-left: 10px;
+        li{
+            margin-bottom: -5px;
+            a{
+font-size: 0.5em ;
+font-weight: 500;
+            }
+        }
+    }
+}
+main {
+    grid-column: 2/5;
+    grid-row: 2/3;
+    h1{
+        color:$main_h1 ;
+        font-weight: 700;
+        font-size: 1.3em;
+        margin-bottom: .5em;
+        letter-spacing: 0;
+    }
+    p{
+color: $main_p;
+margin: 0.7em 0;
+font-size: .6em;
+    }
+}
+.help{
+    grid-column: 2/5;
+    grid-row: 3/4;
+    display: flex;
+    justify-content: space-around;
+    border: 1.5px solid $light_grey;
+    padding: .7em;
+    height: 85px;
+    margin-top: 45px;
+    .help_item{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        h3{
+            font-weight: 600;
+            font-size: .7em;
+
+            
+        }
+        p{
+            margin: .75em 0;
+            font-size: .5em;
+        }
+        button{
+            border: 1.5px solid $main_h1;
+            font-weight: 500;
+            background-color: $white;
+            cursor: pointer;
+            padding: .4em;
+            color: $main_h1 ;
+            font-size: 8px;
+            width: 30px;
+            height: 30px;
+        }
+    }
+}
+.gallery{
+    grid-column: 1/3;
+    grid-row: 5/6;
+    display: grid;
+    grid-template-columns: repeat(4, 20%);
+    grid-column-gap: 1.5em;
+    grid-row-gap: .5em;
+    div{
+        width: 100px;
+    height: 100px;
+        img{
+width: 100%;
+        }
+    }
+}
+.sidebar_related{
+    grid-column: 3/4;
+    grid-row: 5/6;
+    margin-left: 20px;
+    h3{
+        margin-bottom: .3em;
+        padding-bottom: .3em;
+        border-bottom: 1px solid $light_grey;
+        font-size: 15px;
+    }
+    ul{
+        margin-left: 1.1em;
+        li{
+            font-size: 0.75em;
+            a{
+                @include font(.75em,$sidebar-related_a ,500 );
+                margin-left: .2em;
+
+            }
+        }
+    }
+
+    
+}
+footer{
+    grid-column: 1/5;
+    grid-row: 6/7;
+    text-align: center;
+    background-color: $header_background;
+    padding: .5em 0;
+    h3{
+        color: $white;
+        margin-bottom: .5em;
+        font-size: 11.7px;
+    }
+    p{
+        margin-bottom: .6em;
+        font-size: .55em;
+    }
+}
+
+
+    }
+    
+
+
